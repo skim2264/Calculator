@@ -43,9 +43,9 @@ let firstnum = true;
 
 btns.forEach((btn) => {
     btn.addEventListener('click', (e) => {
-        if (!isNaN(e.target.value) || e.target.value == 'dot') {
+        if (!isNaN(e.target.value) || e.target.value == '.') {
             if (firstnum) {
-                if (e.target.value == 'dot') {
+                if (e.target.value == '.') {
                     num1 += '.';
                 }
                 else {
@@ -54,7 +54,7 @@ btns.forEach((btn) => {
                 display = num1;
             }
             else {
-                if  (e.target.value == 'dot') {
+                if  (e.target.value == '.') {
                     num2 += '.';
                 }
                 else {
@@ -92,4 +92,12 @@ btns.forEach((btn) => {
         }
             
     });
+});
+
+document.addEventListener('keydown', (e) => {
+    var name = e.key;
+    if (e.key == 'Enter') {
+        name = '=';
+    }
+    document.getElementById(name).click();
 });
