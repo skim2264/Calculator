@@ -76,6 +76,16 @@ btns.forEach((btn) => {
             operator = null;
             firstnum = true;
         }
+        else if (e.target.value == 'back') {
+            if (firstnum) {
+                num1 = num1.slice(0, -1);
+                document.querySelector('#display').innerHTML = num1;
+            }
+            else {
+                num2 = num2.slice(0, -1);
+                document.querySelector('#display').innerHTML = num2;
+            }
+        }
         else {
             operator = e.target.value;
             firstnum = false;
