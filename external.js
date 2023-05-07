@@ -76,7 +76,7 @@ btns.forEach((btn) => {
             operator = null;
             firstnum = true;
         }
-        else if (e.target.value == 'back') {
+        else if (e.target.parentElement.value == 'back' || e.target.value == 'back') {
             if (firstnum) {
                 num1 = num1.slice(0, -1);
                 document.querySelector('#display').innerHTML = num1;
